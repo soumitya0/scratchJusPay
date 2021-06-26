@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CatSprite() {
+export default function CatSprite(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,11 @@ export default function CatSprite() {
       viewBox="0.3210171699523926 0.3000000357627869 95.17898101806641 100.04156036376953"
       version="1.1"
       xmlSpace="preserve"
+      transform={`translate(${props.left} 80)`}
+      // transform="rotate(-10 50 100)
+      //           translate(-36 45.5)
+      //           skewX(40)
+      //           scale(1 0.5)"
     >
       <g>
         <g id="Page-1" stroke="none" fillRule="evenodd">
