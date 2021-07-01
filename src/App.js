@@ -14,7 +14,7 @@ export default function App() {
     setImpData("WORKING");
   };
 
-  console.log(impData, "ijmpData");
+  console.log(impData, "impData");
 
   return (
     <div className="bg-blue-100 pt-6 font-sans">
