@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { workSpaceBlock } from "./data";
 import * as uuid from "uuid";
 
-export default function MidArea() {
-  console.log(workSpaceBlock);
+export default function MidArea(props) {
+  console.log(workSpaceBlock, "data");
 
   const [getXaxis, setXaxis] = useState(0);
 
@@ -26,10 +26,13 @@ export default function MidArea() {
     let blockName = e.target.id.slice(0, 9);
 
     if (blockName == "whenClick") {
+      console.log("YOU CLICK WHENCLICK START");
+
       workSpaceBlock.filter((obj) => {
         if (obj.name == "whenClick" && obj.isActive == true) {
           console.log("FOUND");
           sessionStorage.setItem("isStart", true);
+          props.sendData("runIt");
         }
       });
     }
@@ -88,6 +91,16 @@ export default function MidArea() {
       doccument.getElementById("myDrop").appendChild(nodeCopy);
     }
   };
+
+  // const demoMethod = () => {
+  //   props.sendData("runIt");
+  // };
+  // demoMethod();
+
+  // useEffect(() => {
+  //   // props.setAuthenticated(true);
+  //   props.sendData("runIt");
+  // }, []);
 
   return (
     <div

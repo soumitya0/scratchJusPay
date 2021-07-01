@@ -1,2 +1,1 @@
-
-export var workSpaceBlock = ["ads"]
+export var workSpaceBlock = [];
